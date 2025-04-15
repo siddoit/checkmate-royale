@@ -46,7 +46,7 @@ Before you begin, ensure you have the following installed/downloaded:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/siddoit/checkmateroyale.git 
+    git clone https://github.com/siddoit/checkmate-royale.git 
     cd checkmateroyale
     ```
 
