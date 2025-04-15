@@ -79,22 +79,23 @@ Before you begin, ensure you have the following installed/downloaded:
 ## Project Structure
 Use code with caution.
 Markdown
+```text
 checkmateroyale/
-├── src/ # Python source code
-│ └── main.py
-├── bin/ # Output directory for the packaged executable (optional)
-│ ├── CheckmateRoyale.exe # Standalone executable (if built)
-│ ├── assets/ # Runtime assets for executable
-│ └── logo.png # Runtime logo for executable
-├── assets/ # Game assets (pieces, logo) for running from source
-│ ├── pieces/ # Piece images (wp.png, bn.png...)
-│ └── logo.png
-├── build/ # PyInstaller build artifacts (temporary)
-├── .gitignore # Git ignore file
-├── install_dependencies.bat # Windows script to install Python packages
-├── README.md # This file
-└── LICENSE # Project license file (e.g., MIT)
-
+├── src/                      # Python source code
+│   └── main.py
+├── bin/                      # Output directory for the packaged executable (optional)
+│   ├── CheckmateRoyale.exe  # Standalone executable (if built)
+│   ├── assets/              # Runtime assets for executable
+│   └── logo.png             # Runtime logo for executable
+├── assets/                  # Game assets (pieces, logo) for running from source
+│   ├── pieces/              # Piece images (wp.png, bn.png...)
+│   └── logo.png
+├── build/                   # PyInstaller build artifacts (temporary)
+├── .gitignore               # Git ignore file
+├── install_dependencies.bat# Windows script to install Python packages
+├── README.md                # This file
+└── LICENSE                  # Project license file (e.g., MIT)
+```
 *(Note: Depending on your exact setup, you might have the `assets` folder only in the root or only in `bin` if you primarily use the built executable.)*
 
 ## Acknowledgements
