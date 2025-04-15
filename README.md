@@ -98,7 +98,7 @@ checkmateroyale/
 ```
 *(Note: Depending on your exact setup, you might have the `assets` folder only in the root or only in `bin` if you primarily use the built executable.)*
 
-
+##  Common Errors & Fixes:
 ### 1. **Stockfish Not Found**
    - **Error Message:** `Stockfish engine not found at the specified path.`
    - **Cause:** The executable is unable to locate the Stockfish engine at the pre-configured path.
