@@ -1,0 +1,11 @@
+# Favor Python
+*.py linguist-language=Python
+
+# De-prioritize these from language stats
+*.html linguist-detectable=false
+*.tex linguist-detectable=false
+
+# Optional: exclude entire folders if they got non-code files
+assets/** linguist-detectable=false
+bin/** linguist-detectable=false
+build/** linguist-detectable=false
