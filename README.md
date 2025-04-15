@@ -1,6 +1,6 @@
 # Checkmate Royale - AI Chess Game
 
-![Checkmate Royale Screenshot](ss.png) 
+![Checkmate Royale Screenshot](bin/ss.png) 
 
 
 Checkmate Royale is a graphical chess game built entirely in Python using Tkinter for the UI and the powerful Stockfish engine for chess AI. Born from an afternoon idea to watch two AIs battle, it evolved into a project featuring Player vs AI combat with a customizable difficulty system and AI banter.
