@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @echo off
 title Checkmate Royale - Dependency Installer
 
@@ -24,11 +23,12 @@ echo.
 
 :: --- Check Python ---
 echo Checking for Python...
+set PYTHON_OK=true
 where python > nul 2>&1
 if %errorlevel% neq 0 (
     echo ERROR: Python not found in PATH.
     echo Please install Python from https://www.python.org/downloads/
-    goto End
+    set PYTHON_OK=false
 ) else (
     echo Python found:
     python --version
@@ -36,27 +36,30 @@ if %errorlevel% neq 0 (
 
 :: --- Check pip ---
 echo.
-echo Checking for pip...
-where pip > nul 2>&1
-if %errorlevel% neq 0 (
-    echo ERROR: pip not found.
-    echo Try reinstalling Python and make sure pip is added to PATH.
-    goto End
-) else (
-    echo pip found:
-    pip --version
-)
+if "%PYTHON_OK%"=="true" (
+    echo Checking for pip...
+    where pip > nul 2>&1
+    if %errorlevel% neq 0 (
+        echo ERROR: pip not found.
+        echo Try reinstalling Python and make sure pip is added to PATH.
+    ) else (
+        echo pip found:
+        pip --version
 
-:: --- Install Required Packages ---
-echo.
-echo Installing required packages...
-pip install --upgrade pip
-pip install Pillow python-chess
+        :: --- Install Required Packages ---
+        echo.
+        echo Installing required packages...
+        pip install --upgrade pip
+        pip install Pillow python-chess
 
-if %errorlevel% neq 0 (
-    echo.
-    echo ERROR: Failed to install packages. Check your internet or run as Admin.
-    goto End
+        if %errorlevel% neq 0 (
+            echo.
+            echo ERROR: Failed to install packages. Check your internet or run as Admin.
+        ) else (
+            echo.
+            echo SUCCESS: All Python packages installed.
+        )
+    )
 )
 
 :: --- Setup Stockfish ---
@@ -82,24 +85,29 @@ if exist "%STOCKFISH_PATH%" (
         Remove-Item stockfish_extract -Recurse -Force"
 
     if exist "%STOCKFISH_PATH%" (
-        echo SUCCESS: Stockfish downloaded and placed in C:\ChessEngines\stockfish
+        echo SUCCESS: Stockfish downloaded and placed in:
+        echo %STOCKFISH_PATH%
     ) else (
-        echo ERROR: Failed to download Stockfish. You may need to download manually from https://stockfishchess.org/download/
+        echo ERROR: Failed to download Stockfish. Download manually if needed.
     )
 )
 
 :: --- Open README.md ---
 echo.
-echo Opening README.md...
-start README.md
+if exist README.md (
+    echo Opening README.md...
+    start README.md
+) else (
+    echo README.md not found.
+)
 
 :End
+echo.
 echo ==========================================================
 echo Reminder:
 echo - Make sure 'assets' folder is in the same directory as this script.
-echo - Stockfish will now be available at: %STOCKFISH_PATH%
+echo - Stockfish will now be available at:
+echo   %STOCKFISH_PATH%
 echo ==========================================================
 echo Press any key to close this window.
 pause > nul
-
->>>>>>> c59e5c415ffe9ef3f28c15480228a2a638f89b60
