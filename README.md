@@ -98,6 +98,29 @@ checkmateroyale/
 ```
 *(Note: Depending on your exact setup, you might have the `assets` folder only in the root or only in `bin` if you primarily use the built executable.)*
 
+
+### 1. **Stockfish Not Found**
+   - **Error Message:** `Stockfish engine not found at the specified path.`
+   - **Cause:** The executable is unable to locate the Stockfish engine at the pre-configured path.
+   - **Fix:** 
+     - Download Stockfish from the [official Stockfish download page](https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-avx2.zip).
+     - Extract the Stockfish files to the correct path: **"C:\ChessEngines\stockfish\stockfish-windows-x86-64-avx2.exe"**.
+     - Ensure that the path is correct and Stockfish is properly installed in the specified directory.
+
+### 2. **Permissions Error**
+   - **Error Message:** `You do not have permission to execute this file.`
+   - **Cause:** Insufficient user permissions to run the executable.
+   - **Fix:** 
+     - Right-click on the `CheckmateRoyale.exe` file and select **"Run as administrator"**.
+     - Alternatively, move the program to a location where you have full control (e.g., within your user folder).
+   
+### 3. **Missing or Corrupted Stockfish Files**
+   - **Error Message:** `Stockfish engine is corrupted or missing required files.`
+   - **Cause:** The Stockfish download or extraction was incomplete or corrupted.
+   - **Fix:**
+     - Re-download Stockfish from the official source and re-extract it to the proper location.
+     - Make sure no files are missing after extraction.
+       
 ## Acknowledgements
 
 *   Chess pieces graphics sourced from [Green Chess](https://greenchess.net/info.php?item=downloads)
