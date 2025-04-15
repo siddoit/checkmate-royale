@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Checkmate Royale - AI Chess Game
 
 ![Checkmate Royale Screenshot](ss.png) 
